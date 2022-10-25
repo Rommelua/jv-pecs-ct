@@ -1,11 +1,20 @@
 package core.mate.academy.model;
 
-/**
- * Add some custom fields that could be only in Bulldozer
- * Do not remove no-args constructor
- */
+import core.mate.academy.coreelements.MetalBlade;
+
 public class Bulldozer extends Machine {
+
+    private MetalBlade blade;
+
     public Bulldozer() {
+    }
+
+    public MetalBlade getBlade() {
+        return blade;
+    }
+
+    public void setBlade(MetalBlade blade) {
+        this.blade = blade;
     }
 
     @Override
