@@ -1,11 +1,23 @@
 package core.mate.academy.model;
 
-/**
- * Add some custom fields that could be only in Truck
- * Do not remove no-field constructor
- */
+import core.mate.academy.model.coreelements.MachineGun;
+
 public class Truck extends Machine {
+    private MachineGun gun;
+
+    public Truck(MachineGun gun) {
+        this.gun = gun;
+    }
+
     public Truck() {
+    }
+
+    public MachineGun getGun() {
+        return gun;
+    }
+
+    public void setGun(MachineGun gun) {
+        this.gun = gun;
     }
 
     @Override
