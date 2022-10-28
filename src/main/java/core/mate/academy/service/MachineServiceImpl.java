@@ -18,6 +18,7 @@ public class MachineServiceImpl implements MachineService<Machine> {
         }
         if (type.equals(Truck.class)) {
             return new TruckProducer().get();
+
         }
         if (type.equals(Excavator.class)) {
             return new ExcavatorProducer().get();
@@ -29,44 +30,29 @@ public class MachineServiceImpl implements MachineService<Machine> {
     @Override
     public void fill(List<? super Machine> machines, Machine value) {
         if (value.getClass().equals(Bulldozer.class)) {
-            fillBulldozer(machines);
+            for (int i = 0; i < machines.size(); i++) {
+                machines.set(i,value);
+            }
             return;
         }
         if (value.getClass().equals((Truck.class))) {
-            fillTruck(machines);
+            for (int i = 0; i < machines.size(); i++) {
+                machines.set(i,value);
+            }
             return;
         }
         if (value.getClass().equals(Excavator.class)) {
-            fillExcavator(machines);
+            for (int i = 0; i < machines.size(); i++) {
+                machines.set(i,value);
+            }
             return;
         }
     }
 
     @Override
     public void startWorking(List<?extends Machine> list) {
-        for (int i = 0; i < list.size(); i++) {
-            list.get(i).doWork();
-        }
-    }
-
-    public void fillBulldozer(List<? super Machine> machines) {
-        Bulldozer insertElem = new Bulldozer();
-        for (int i = 0; i < machines.size(); i++) {
-            machines.set(i,insertElem);
-        }
-    }
-
-    public void fillTruck(List<? super Machine> machines) {
-        Truck insertElem = new Truck();
-        for (int i = 0; i < machines.size(); i++) {
-            machines.set(i,insertElem);
-        }
-    }
-
-    public void fillExcavator(List<? super Machine> machines) {
-        Excavator insertElem = new Excavator();
-        for (int i = 0; i < machines.size(); i++) {
-            machines.set(i,insertElem);
+        for (Machine machine:list) {
+            machine.doWork();
         }
     }
 }

@@ -5,24 +5,15 @@ import core.mate.academy.model.Truck;
 import java.util.ArrayList;
 import java.util.List;
 
-class TruckProducer implements MachineProducer<Machine> {
-    private List<Machine> truckList;
+class TruckProducer implements MachineProducer<Truck> {
 
     @Override
     public List<Machine> get() {
-        truckList = new ArrayList<>();
+        List<Machine> truckList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             Truck temp = new Truck();
             truckList.add(temp);
         }
         return truckList;
-    }
-
-    public List<Machine> getTruckList() {
-        return truckList;
-    }
-
-    public void setTruckList(List<Machine> truckList) {
-        this.truckList = truckList;
     }
 }

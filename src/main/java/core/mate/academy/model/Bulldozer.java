@@ -1,6 +1,6 @@
 package core.mate.academy.model;
 
-import core.mate.academy.coreelements.MetalBlade;
+import core.mate.academy.model.coreelements.MetalBlade;
 
 public class Bulldozer extends Machine {
 

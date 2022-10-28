@@ -1,6 +1,6 @@
 package core.mate.academy.model;
 
-import core.mate.academy.coreelements.ExcavatorBucket;
+import core.mate.academy.model.coreelements.ExcavatorBucket;
 
 public class Excavator extends Machine {
     private ExcavatorBucket bucket;

@@ -1,6 +1,6 @@
 package core.mate.academy.model;
 
-import core.mate.academy.coreelements.MachineGun;
+import core.mate.academy.model.coreelements.MachineGun;
 
 public class Truck extends Machine {
     private MachineGun gun;

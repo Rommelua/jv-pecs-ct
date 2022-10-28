@@ -1,4 +1,4 @@
-package core.mate.academy.coreelements;
+package core.mate.academy.model.coreelements;
 
 public class ExcavatorBucket {
     private String model;
