@@ -4,6 +4,7 @@ import core.mate.academy.model.Bulldozer;
 import core.mate.academy.model.Excavator;
 import core.mate.academy.model.Machine;
 import core.mate.academy.model.Truck;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,14 +15,16 @@ public class MachineServiceImpl implements MachineService<Machine> {
     @Override
     public List<Machine> getAll(Class<? extends Machine> type) {
         if (type.equals(Bulldozer.class)) {
-            return new BulldozerProducer().get();
+            List<? extends Machine> machines = new BulldozerProducer().get();
+            return new ArrayList<>(machines);
         }
         if (type.equals(Truck.class)) {
-            return new TruckProducer().get();
-
+            List<? extends Machine> machines = new TruckProducer().get();
+            return new ArrayList<>(machines);
         }
         if (type.equals(Excavator.class)) {
-            return new ExcavatorProducer().get();
+            List<? extends Machine> machines = new ExcavatorProducer().get();
+            return new ArrayList<>(machines);
         }
         return Collections.emptyList();
 
@@ -29,23 +32,8 @@ public class MachineServiceImpl implements MachineService<Machine> {
 
     @Override
     public void fill(List<? super Machine> machines, Machine value) {
-        if (value.getClass().equals(Bulldozer.class)) {
-            for (int i = 0; i < machines.size(); i++) {
-                machines.set(i,value);
-            }
-            return;
-        }
-        if (value.getClass().equals((Truck.class))) {
-            for (int i = 0; i < machines.size(); i++) {
-                machines.set(i,value);
-            }
-            return;
-        }
-        if (value.getClass().equals(Excavator.class)) {
-            for (int i = 0; i < machines.size(); i++) {
-                machines.set(i,value);
-            }
-            return;
+        for (int i = 0; i < machines.size(); i++) {
+            machines.set(i,value);
         }
     }
 
