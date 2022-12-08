@@ -5,12 +5,11 @@ package core.mate.academy.model;
  * Do not remove no-args constructor
  */
 public class Excavator extends Machine {
-    private String typeOfExcavator; //Wheeled
-    private String nameOfExcavator; //Caterpillar
-    private int weightOfExcavator; //48,988kg
+    private String typeOfExcavator;
+    private String nameOfExcavator;
+    private int weightOfExcavator;
 
     public Excavator() {
-
     }
 
     public Excavator(String typeOfExcavator, String nameOfExcavator, int weightOfExcavator) {

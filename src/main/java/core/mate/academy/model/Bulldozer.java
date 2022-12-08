@@ -5,9 +5,9 @@ package core.mate.academy.model;
  * Do not remove no-args constructor
  */
 public class Bulldozer extends Machine {
-    private String typeOfBulldozer; //Heavy bulldozer
-    private String nameOfBu; //Caterpillar
-    private int weightOfBu; //48,988kg
+    private String typeOfBulldozer;
+    private String nameOfBu;
+    private int weightOfBu;
 
     public Bulldozer() {
     }

@@ -5,12 +5,11 @@ package core.mate.academy.model;
  * Do not remove no-field constructor
  */
 public class Truck extends Machine {
-    private String typeOfTruck; //Wheeled
-    private String nameOfTruck; //Caterpillar
-    private int weightOfTruck; //48,988kg
+    private String typeOfTruck;
+    private String nameOfTruck;
+    private int weightOfTruck;
 
     public Truck() {
-
     }
 
     public Truck(String typeOfTruck, String nameOfTruck, int weightOfTruck) {

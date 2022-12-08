@@ -12,27 +12,29 @@ import java.util.List;
  * Your implementation of MachineService.
  */
 public class MachineServiceImpl implements MachineService<Machine> {
+    BulldozerProducer bulldozerProducer = new BulldozerProducer();
+    ExcavatorProducer excavatorProducer = new ExcavatorProducer();
+    TruckProducer truckProducer = new TruckProducer();
+
     @Override
     public List<Machine> getAll(Class<? extends Machine> type) {
         if (type.equals(Bulldozer.class)) {
-            BulldozerProducer bulldozerProducer = new BulldozerProducer();
+            //bulldozerProducer = new BulldozerProducer();
             List<Bulldozer> bulldozerList = bulldozerProducer.get();
-
             return new ArrayList<>(bulldozerList);
         }
         if (type.equals(Excavator.class)) {
-            ExcavatorProducer excavatorProducer = new ExcavatorProducer();
+            //excavatorProducer = new ExcavatorProducer();
             List<Excavator> excavatorList = excavatorProducer.get();
-
             return new ArrayList<>(excavatorList);
         }
         if (type.equals(Truck.class)) {
-            TruckProducer truckProducer = new TruckProducer();
+            //truckProducer = new TruckProducer();
             List<Truck> truckList = truckProducer.get();
             return new ArrayList<>(truckList);
         }
 
-        return /*Collections.emptyList()*/ new ArrayList<>();
+        return new ArrayList<>();
     }
 
     @Override
@@ -42,5 +44,7 @@ public class MachineServiceImpl implements MachineService<Machine> {
 
     @Override
     public void startWorking(List<? extends Machine> machines) {
+        Machine machine = machines.get(0);
+        machine.doWork();
     }
 }
