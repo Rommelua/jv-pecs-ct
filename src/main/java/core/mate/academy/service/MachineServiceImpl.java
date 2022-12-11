@@ -41,6 +41,8 @@ public class MachineServiceImpl implements MachineService<Machine> {
 
     @Override
     public void startWorking(List<? extends Machine> machines) {
-        machines.get(0).doWork();
+        for (Machine machine : machines) {
+            machine.doWork();
+        }
     }
 }
